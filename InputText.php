@@ -1,9 +1,14 @@
 <?php
 
 /**
- * InputText class
+ * Classe que renderiza um elemento input text.
+ * Com este classe é possível criar um input texto e definir qualquer atributo que ele deverá ter.
+ * 
+ * @author: Tayron Miranda <dev@tayron.com.br>
+ * @see https://github.com/tayron/Html-Helper/edit/master/InputText.php
  */
 class InputText{
+    
     private $atributes = array(
         'type' => 'text',
         'label' => false,
@@ -13,7 +18,11 @@ class InputText{
 
 
     /**
-     *
+     * Método construtor da classe, recebe os atributos que o input deverá possuir.
+     * 
+     * @access public
+     * @param array $atributes Array com os atributos que o input irá ter.
+     * @return void
      */
     public function __construct( $atributes = array() )
     {
@@ -27,7 +36,10 @@ class InputText{
 
 
     /**
-     *
+     * Método que renderiza o input na tela
+     * 
+     * @acess public
+     * @return string
      */
     public function display()
     {
@@ -40,7 +52,10 @@ class InputText{
     }
 
     /**
-     *
+     * Método que monta e retorna os atibutos que o input irá ter.
+     * 
+     * @access private 
+     * @return string
      */
     private function getAtributes()
     {
