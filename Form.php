@@ -1,17 +1,24 @@
 <?php
 
 /**
- * Form class
+ * Classe que renderiza um elemento form.
+ * Com este classe é possível criar um formulário com todos seus elementos embutidos.
+ * 
+ * @author: Tayron Miranda <dev@tayron.com.br>
+ * @see https://github.com/tayron/Html-Helper/edit/master/Form.php
  */
 class Form{
     private $elements = array();
-    private $atributes = array(
-        'method' => 'post'
-    );
+    private $atributes = array('method' => 'post');
 
 
     /**
-     *
+     * Método constritor da classe onde é possível defirnir 
+     * os atributos do formulário
+     * 
+     * @acess public 
+     * @param array $atributes Array com os atributos do formulário
+     * @return void
      */
     public function __construct( $atributes = array() )
     {
@@ -22,7 +29,10 @@ class Form{
 
 
     /**
-     *
+     * Método que adiciona um novo elemento ao formulário
+     * 
+     * @access public
+     * @return void
      */
     public function addElement( $element )
     {
@@ -31,7 +41,10 @@ class Form{
 
 
     /**
-     *
+     * Método que monta e renderia o formulário e todos seus elementos.
+     * 
+     * @access private 
+     * @return string
      */
     public function display( $textButton = null, $atributeButton = array() )
     {
@@ -55,7 +68,10 @@ class Form{
     }
 
     /**
-     *
+     * Método que monta e retorna os atibutos que o formulário irá ter.
+     * 
+     * @access private 
+     * @return string
      */
     private function getAtributes()
     {
