@@ -1,5 +1,5 @@
 # Html-Helper
-Classes para geração de Elementos Html, como input text, form, div
+Classes PHP criadas como base de estudo para gerar elementos Html.
 
 Exemplo de utilização das classes
 ```
