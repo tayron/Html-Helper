@@ -31,7 +31,7 @@ class Html implements InterfaceHtml{
     /**
      * Constante que armazena modelo da tag form
      */
-    const FORM = '<form %s>%s</form>';
+    const FORM = '<form%s>%s</form>';
 
     /**
      * Constante que armazena a tag button
@@ -60,7 +60,7 @@ class Html implements InterfaceHtml{
 
         foreach ($this->atributes as $value => $key) {
             if ($value != 'label') {
-                $atributes .= sprintf(self::ATTRIBUTE, $value, $key);
+                $atributes .= sprintf(self::ATTRIBUTE, $value, trim($key));
             }
         }
 
