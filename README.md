@@ -28,22 +28,23 @@ Exemplo de utilização das classes
 ```
 Resultado
 ```
-<form type = "post" method = "post">
-    <div style = "display: block; padding: 5px">
-        <label for = "nome">Nome Completo:</label>
-        <input id = "nome" type = "text" name = "nome">
+<form  method="post" type="post">
+    <div style="display: block; padding: 5px">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" name="nome" id="nome" />
     </div>
-    <div style = "display: block; padding: 5px">
-        <label for = "telefone">Telefone:</label>
-        <input id = "telefone" type = "phone" name = "telefone">
+    <div style="display: block; padding: 5px">
+        <label for="telefone">Telefone:</label>
+        <input type="phone" name="telefone" id="telefone" />
     </div>
-    <div style = "display: block; padding: 5px">
-        <label for = "telefone">Telefone:</label>
-        <input id = "telefone" type = "phone" name = "telefone">
+    <div style="display: block; padding: 5px">
+        <label for="telefone">Telefone:</label>
+        <input type="phone" name="telefone" id="telefone" />
     </div>
-    <div style = "display: block; padding: 5px">
-        <label for = "menagem">Mensagem:</label>
-        <textarea id = "mensagem" name = "menagem"></textarea>
+    <div style="display: block; padding: 5px">
+        <label for="menagem">Mensagem:</label>
+        <textarea name="menagem" id="mensagem" />
+        </textarea>
     </div>
     <button>Enviar mensagem</button>
 </form>
