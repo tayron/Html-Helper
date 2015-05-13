@@ -7,10 +7,19 @@
  * @author: Tayron Miranda <dev@tayron.com.br>
  * @see https://github.com/tayron/Html-Helper/edit/master/Form.php
  */
-class Form{
+class Form extends Html implements InterfaceForm{
+    
+    /**
+     *
+     * @var type 
+     */
     private $elements = array();
+    
+    /**
+     *
+     * @var type 
+     */
     private $atributes = array('method' => 'post');
-
 
     /**
      * Método constritor da classe onde é possível defirnir 
@@ -20,21 +29,21 @@ class Form{
      * @param array $atributes Array com os atributos do formulário
      * @return void
      */
-    public function __construct( $atributes = array() )
+    public function __construct( array $atributes )
     {
         foreach ($atributes as $key => $value) {
             $this->atributes[$key] = $value;
         }
     }
 
-
     /**
      * Método que adiciona um novo elemento ao formulário
      * 
      * @access public
+     * @param Html $element Elemento Html
      * @return void
      */
-    public function addElement( $element )
+    public function addElement( Html $element )
     {
         array_push($this->elements, $element);
     }
@@ -44,16 +53,16 @@ class Form{
      * Método que monta e renderia o formulário e todos seus elementos.
      * 
      * @access private 
+     * @param string $textButton Texto do botão
+     * @param array $atributeButton Atributos do botão
      * @return string
      */
-    public function display( $textButton = null, $atributeButton = array() )
+    public function display(array $atributeButton, $textButton = null)
     {
-        $atributes = $this->getAtributes();
-
-        echo "<form{$atributes}>";
-
+        $elements = null;
+        
         foreach ($this->elements as $element) {
-            echo $element->display();
+            $elements .= $element->display();
         }
 
         if( $textButton != null ){
@@ -61,10 +70,10 @@ class Form{
             foreach ($atributeButton as $value => $key) {
                 $atributes .= " {$value}='{$key}'";
             }
-            echo "<button $atributes>{$textButton}</button>";
+            $elements .= sprintf(self::BUTTON, $atributes, $textButton);
         }
 
-        echo "</form>";
+        printf(self::FORM, $this->getAtributes(), $elements);
     }
 
     /**
@@ -78,7 +87,7 @@ class Form{
         $atributes = '';
 
         foreach ($this->atributes as $value => $key) {
-            $atributes .= " {$value}='{$key}'";
+            $atributes .= sprintf(self::ATTRIBUTE, $value, $key);
         }
 
         return $atributes;

@@ -7,9 +7,14 @@
  * @author: Tayron Miranda <dev@tayron.com.br>
  * @see https://github.com/tayron/Html-Helper/blob/master/Div.php
  */
-class Div{
+class Div extends Html implements interfaceDiv{
+
+    /**
+     * Armazena os elementos dentro da div
+     * 
+     * @var array 
+     */
     private $elements = array();
-    private $atributes = array();
 
     /**
      * Método construtor da classe, recebe o conteúdo que a div irá conter e um 
@@ -20,7 +25,7 @@ class Div{
      * @param array $atributes Array com os atributos que a div irá ter.
      * @return void
      */
-    public function __construct( $element, $atributes = array() )
+    public function __construct( $element, array $atributes )
     {
         array_push($this->elements, $element);
 
@@ -37,15 +42,13 @@ class Div{
      */
     public function display()
     {
-        $atributes = $this->getAtributes();
-
-        echo "<div{$atributes}>";
-
+        $elements = null;
+        
         foreach ($this->elements as $element) {
-            echo $element->display();
+            $elements .= $element->display();
         }
 
-        echo "</div>";
+        printf(self::DIV, $this->getAtributes(), $elements);
     }
 
     /**
@@ -59,7 +62,7 @@ class Div{
         $atributes = '';
 
         foreach ($this->atributes as $value => $key) {
-            $atributes .= " {$value}='{$key}'";
+            $atributes .= sprintf(self::ATTRIBUTE, $value, $key);
         }
 
         return $atributes;

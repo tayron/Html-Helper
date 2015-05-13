@@ -7,15 +7,19 @@
  * @author: Tayron Miranda <dev@tayron.com.br>
  * @see https://github.com/tayron/Html-Helper/edit/master/InputText.php
  */
-class InputText{
+class InputText extends Html implements InterfaceInputText{
     
+    /**
+     * Array com os atributos dos elementos Html
+     * 
+     * @var array 
+     */
     private $atributes = array(
         'type' => 'text',
         'label' => false,
         'name' => '',
         'id' => ''
     );
-
 
     /**
      * Método construtor da classe, recebe os atributos que o input deverá possuir.
@@ -24,7 +28,7 @@ class InputText{
      * @param array $atributes Array com os atributos que o input irá ter.
      * @return void
      */
-    public function __construct( $atributes = array() )
+    public function __construct( array $atributes)
     {
         $this->atributes['name'] = 'inputText_' . rand(0, 99999) . date( 'yms' );
         $this->atributes['id']   = $this->atributes['name'];
@@ -33,7 +37,6 @@ class InputText{
             $this->atributes[$key] = $value;
         }
     }
-
 
     /**
      * Método que renderiza o input na tela
@@ -44,11 +47,11 @@ class InputText{
     public function display()
     {
         if( $this->atributes['label'] != false ){
-            echo "<label for='{$this->atributes['name']}'>{$this->atributes['label']}</label>";
+            echo sprintf(self::LABEL, $this->atributes['name'], 
+                $this->atributes['label']);
         }
 
-        $atributes = $this->getAtributes();
-        echo "<input{$atributes} />";
+        echo printf(self::INPUT_TEXT, $this->getAtributes());
     }
 
     /**
@@ -63,7 +66,7 @@ class InputText{
 
         foreach ($this->atributes as $value => $key) {
             if($value != 'label'){
-                $atributes .= " {$value}='{$key}'";
+                $atributes .= sprintf(self::ATTRIBUTE, $value, $key);
             }
         }
 
