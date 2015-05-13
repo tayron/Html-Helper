@@ -4,7 +4,7 @@
  * Classe abstrata que representa os elementos Html
  *
  * @author: Tayron Miranda <dev@tayron.com.br>
- * @see https://github.com/tayron/Html-Helper/edit/master/InputText.php
+ * @see https://github.com/tayron/Html-Helper/edit/master/Html.php
  */
 class Html implements InterfaceHtml{
 
