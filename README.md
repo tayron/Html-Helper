@@ -4,41 +4,47 @@ Classes para geração de Elementos Html, como input text, form, div
 Exemplo de utilização das classes
 ```
 #!php
-// Criando o input para o campo nome
-$configNome['name']        = 'name';
-$configNome['id']          = 'name';
-$configNome['label']       = 'Nome: ';
-$configNome['placeholder'] = 'Ex.: Pedro ';
-$inputNome = new InputText($configNome);
- 
-// Criando o input para o campo telefone
-$configTelefone['name']     = 'telephone';
-$configTelefone['id']       = 'telephone';
-$configTelefone['label']    = 'Telefone: ';
-$inputTelefone = new InputText($configTelefone);
- 
-// Criando o Formulario e adicionando os campos
-$configForm['method']   = 'post';
-$configForm['name']     = 'FormCadastroUsuario';
-$configForm['id']       = 'FormCadastroUsuario';
-$configForm['action']   = 'index.php';
- 
-$Form = new Form( $configForm );
-$Form->addElement( new Div( $inputNome ) );
-$Form->addElement( new Div( $inputTelefone ) );
-$Form->display( 'Salvar' );
+    function __autoload($classe){
+        include_once 'Html/' . $classe.'.php';
+    }
+
+    $nomeCompleto = new InputText(['id' => 'nome', 'name' => 'nome', 'type' => 'text', 'label' => 'Nome Completo:']);
+    $telefone = new InputText(['id' => 'telefone', 'name' => 'telefone', 'type' => 'phone', 'label' => 'Telefone:']);
+    $email = new InputText(['id' => 'email', 'name' => 'email', 'type' => 'email', 'label' => 'Email:']);
+    $mensagem = new Textarea(['id' => 'mensagem', 'name' => 'menagem', 'label' => 'Mensagem:']);
+
+    $divNome = new Div($nomeCompleto, ['style' => 'display: block; padding: 5px']);
+    $divTelefone = new Div($telefone, ['style' => 'display: block; padding: 5px']);
+    $divEmail = new Div($telefone, ['style' => 'display: block; padding: 5px']);
+    $divMensagem = new Div($mensagem, ['style' => 'display: block; padding: 5px']);
+
+    $formulario = new Form(['type' => 'post']);
+    $formulario->addElement($divNome);
+    $formulario->addElement($divTelefone);
+    $formulario->addElement($divEmail);
+    $formulario->addElement($divMensagem);
+    
+    echo $formulario->display('Enviar mensagem');
 ```
 Resultado
 ```
-<form action="index.php" id="FormCadastroUsuario" name="FormCadastroUsuario" method="post">
-    <div>
-        <label for="name">Nome: </label>
-        <input type="text" placeholder="Ex.: Pedro " id="name" name="name">
+<form type = "post" method = "post">
+    <div style = "display: block; padding: 5px">
+        <label for = "nome">Nome Completo:</label>
+        <input id = "nome" type = "text" name = "nome">
     </div>
-    <div>
-        <label for="telephone">Telefone: </label>
-        <input type="text" id="telephone" name="telephone">
+    <div style = "display: block; padding: 5px">
+        <label for = "telefone">Telefone:</label>
+        <input id = "telefone" type = "phone" name = "telefone">
     </div>
-    <button>Salvar</button>
+    <div style = "display: block; padding: 5px">
+        <label for = "telefone">Telefone:</label>
+        <input id = "telefone" type = "phone" name = "telefone">
+    </div>
+    <div style = "display: block; padding: 5px">
+        <label for = "menagem">Mensagem:</label>
+        <textarea id = "mensagem" name = "menagem"></textarea>
+    </div>
+    <button>Enviar mensagem</button>
 </form>
 ```
