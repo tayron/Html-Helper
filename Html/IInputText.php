@@ -4,9 +4,9 @@
  * Interface que determina como deve ser a Classe InputText.
  *
  * @author: Tayron Miranda <dev@tayron.com.br>
- * @see https://github.com/tayron/Html-Helper/edit/master/InterfaceInputText.php
+ * @see https://github.com/tayron/Html-Helper/edit/master/IInputText.php
  */
-interface InterfaceInputText {
+interface IInputText {
 
     /**
      * Método construtor da classe, recebe os atributos que o input deverá possuir.

@@ -4,9 +4,9 @@
  * Interface que determina como deve ser a Classe Div.
  *
  * @author: Tayron Miranda <dev@tayron.com.br>
- * @see https://github.com/tayron/Html-Helper/edit/master/InterfaceDiv.php
+ * @see https://github.com/tayron/Html-Helper/edit/master/IDiv.php
  */
-interface InterfaceDiv {
+interface IDiv {
 
     /**
      * Método construtor da classe, recebe o conteúdo que a div irá conter e um

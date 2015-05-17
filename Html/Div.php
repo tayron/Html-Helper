@@ -7,7 +7,7 @@
  * @author: Tayron Miranda <dev@tayron.com.br>
  * @see https://github.com/tayron/Html-Helper/blob/master/Div.php
  */
-class Div extends Html implements InterfaceDiv {
+class Div extends Html implements IDiv {
 
     /**
      * Armazena os elementos dentro da div

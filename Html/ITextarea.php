@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Interface que determina como deve ser a Classe InterfaceTextarea.
+ * Interface que determina como deve ser a Classe ITextarea.
  *
  * @author: Tayron Miranda <dev@tayron.com.br>
- * @see https://github.com/tayron/Html-Helper/edit/master/InterfaceTextarea.php
+ * @see https://github.com/tayron/Html-Helper/edit/master/ITextarea.php
  */
-interface InterfaceTextarea {
+interface ITextarea {
 
     /**
      * Método construtor da classe, recebe os atributos que o input deverá possuir.

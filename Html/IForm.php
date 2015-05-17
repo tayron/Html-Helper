@@ -4,9 +4,9 @@
  * Interface que determina como deve ser a Classe Form.
  *
  * @author: Tayron Miranda <dev@tayron.com.br>
- * @see https://github.com/tayron/Html-Helper/edit/master/InterfaceForm.php
+ * @see https://github.com/tayron/Html-Helper/edit/master/IForm.php
  */
-interface InterfaceForm {
+interface IForm {
 
     /**
      * Método constritor da classe onde é possível defirnir

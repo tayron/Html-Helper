@@ -6,7 +6,7 @@
  * @author: Tayron Miranda <dev@tayron.com.br>
  * @see https://github.com/tayron/Html-Helper/edit/master/Html.php
  */
-class Html implements InterfaceHtml{
+abstract class Html implements IHtml{
 
     /**
      * Constante que armazena modelo do elemento Label

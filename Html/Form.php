@@ -7,7 +7,7 @@
  * @author: Tayron Miranda <dev@tayron.com.br>
  * @see https://github.com/tayron/Html-Helper/edit/master/Form.php
  */
-class Form extends Html implements InterfaceForm {
+class Form extends Html implements IForm {
 
     /**
      *

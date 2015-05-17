@@ -7,7 +7,7 @@
  * @author: Tayron Miranda <dev@tayron.com.br>
  * @see https://github.com/tayron/Html-Helper/edit/master/Textarea.php
  */
-class Textarea extends Html implements InterfaceTextarea {
+class Textarea extends Html implements ITextarea {
 
     /**
      * Variavel que armazena o valor padrao do textarea

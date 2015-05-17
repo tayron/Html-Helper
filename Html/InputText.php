@@ -7,7 +7,7 @@
  * @author: Tayron Miranda <dev@tayron.com.br>
  * @see https://github.com/tayron/Html-Helper/edit/master/InputText.php
  */
-class InputText extends Html implements InterfaceInputText {
+class InputText extends Html implements IInputText {
 
     /**
      * Método construtor da classe, recebe os atributos que o input deverá possuir.
